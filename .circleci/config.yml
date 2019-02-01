@@ -14,3 +14,6 @@ jobs:
       - run:
           name: GCC Version
           command: gcc -v
+      - run:
+          name: Run Tests
+          command: ./run-tests

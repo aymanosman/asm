@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+echo 00_exit
+cd 00_exit
+./entrypoint.sh
+echo
+cd ..
+
+echo 01_write
+cd 01_write
+./entrypoint.sh
+echo
+cd ..
