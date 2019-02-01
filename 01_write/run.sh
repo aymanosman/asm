@@ -1,1 +1,1 @@
-docker run -v $PWD:/data box1 sh -c "cd data && ./entrypoint.sh"
+docker run -v $PWD:/data -w /data box1 sh -c "./entrypoint.sh"

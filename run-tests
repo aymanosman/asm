@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
 
-echo 00_exit
-cd 00_exit
-./entrypoint.sh
-echo
-cd ..
+COPTS=""
 
-echo 01_write
-cd 01_write
-./entrypoint.sh
-echo
-cd ..
+function f00() {
+  name=$1
+  echo $name
+  cd $name
+  gcc $COPTS ${name}.s
+  ./a.out
+  echo exit code: $?
+  echo
+  cd ..
+}
+
+COPTS="-nostdlib" f00 00_exit
+COPTS="-nostdlib" f00 01_write
+f00 00_normal_exit
